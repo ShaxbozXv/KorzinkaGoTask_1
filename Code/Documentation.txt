@@ -1,0 +1,62 @@
+Fact Table: ClicksFacts
+
+click_id: Unique identifier for each click event. Auto-incremented primary key.
+application_id: Identifier for the application associated with the click.
+publisher_id: Identifier for the publisher associated with the click.
+tracker_name: Name of the tracker used for the click.
+tracking_id: Identifier for the tracking information of the click.
+click_timestamp: Timestamp of the click event.
+ios_ifa: Identifier for iOS devices (IDFA).
+ios_ifv: Identifier for iOS devices (IDFV).
+android_id: Identifier for Android devices.
+google_aid: Google Advertising ID.
+os_name: Name of the operating system.
+os_version: Version of the operating system.
+device_manufacturer: Manufacturer of the device.
+device_model: Model of the device.
+device_type: Type of the device.
+is_bot: Indicates whether the click is from a bot (binary: 0 or 1).
+country_iso_code: ISO code of the country where the click originated.
+city: City where the click originated.
+Dimension Tables:
+
+ApplicationsDim
+
+app_id: Unique identifier for each application. Auto-incremented primary key.
+application_id: Identifier for the application.
+publisher_name: Name of the publisher associated with the application.
+PublishersDim
+
+pub_id: Unique identifier for each publisher. Auto-incremented primary key.
+publisher_id: Identifier for the publisher.
+publisher_name: Name of the publisher.
+TrackersDim
+
+tracker_id: Unique identifier for each tracker. Auto-incremented primary key.
+tracking_id: Identifier for the tracking information.
+tracker_name: Name of the tracker.
+DevicesDim
+
+device_id: Unique identifier for each device. Auto-incremented primary key.
+device_manufacturer: Manufacturer of the device.
+device_model: Model of the device.
+device_type: Type of the device.
+OperatingSystemsDim
+
+osys_id: Unique identifier for each operating system. Auto-incremented primary key.
+os_name: Name of the operating system.
+os_version: Version of the operating system.
+LocationsDim
+
+location_id: Unique identifier for each location. Auto-incremented primary key.
+country_iso_code: ISO code of the country.
+city: City name.
+ClickDetailsDim
+
+click_id: Unique identifier for each click. Primary key.
+click_datetime: Date and time of the click event.
+click_ipv6: IPv6 address of the click event.
+click_url_parameters: URL parameters of the click.
+click_user_agent: User agent string of the click.
+
+These tables and columns provide a structured representation of click events and associated dimensions, facilitating analytics and reporting on click data.
